@@ -1,0 +1,12 @@
+E:\AutoOrderSystem\AutoOrderSystemModel\bin\x86\Debug\AutoOrderSystemModel.dll
+E:\AutoOrderSystem\AutoOrderSystemModel\bin\x86\Debug\AutoOrderSystemModel.pdb
+E:\AutoOrderSystem\AutoOrderSystemModel\obj\x86\Debug\AutoOrderSystemModel.dll
+E:\AutoOrderSystem\AutoOrderSystemModel\obj\x86\Debug\AutoOrderSystemModel.pdb
+E:\AutoOrderSystem\AutoOrderSystemModel\obj\x86\Debug\AutoOrderSystemModel.csprojResolveAssemblyReference.cache
+E:\SourceCode\Dev_AutoOrderSystem\AutoOrderSystemModel\bin\x86\Debug\AutoOrderSystemModel.dll
+E:\SourceCode\Dev_AutoOrderSystem\AutoOrderSystemModel\bin\x86\Debug\AutoOrderSystemModel.pdb
+E:\SourceCode\Dev_AutoOrderSystem\AutoOrderSystemModel\obj\x86\Debug\AutoOrderSystemModel.dll
+E:\SourceCode\Dev_AutoOrderSystem\AutoOrderSystemModel\obj\x86\Debug\AutoOrderSystemModel.pdb
+E:\SourceCode\AutoOrderSystem\AutoOrderSystemModel.dll
+E:\SourceCode\AutoOrderSystem\AutoOrderSystemModel.pdb
+E:\SourceCode\Dev_AutoOrderSystem\AutoOrderSystemModel\obj\x86\Debug\AutoOrderSystemModel.csprojResolveAssemblyReference.cache

@@ -1,0 +1,4 @@
+E:\AutoOrderSystem\AutoOrderSystemModel\bin\x64\Debug\AutoOrderSystemModel.dll
+E:\AutoOrderSystem\AutoOrderSystemModel\bin\x64\Debug\AutoOrderSystemModel.pdb
+E:\AutoOrderSystem\AutoOrderSystemModel\obj\x64\Debug\AutoOrderSystemModel.dll
+E:\AutoOrderSystem\AutoOrderSystemModel\obj\x64\Debug\AutoOrderSystemModel.pdb

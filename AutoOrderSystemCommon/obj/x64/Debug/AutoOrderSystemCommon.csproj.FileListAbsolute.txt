@@ -1,0 +1,1 @@
+E:\AutoOrderSystem\AutoOrderSystemCommon\obj\x64\Debug\AutoOrderSystemCommon.csprojResolveAssemblyReference.cache

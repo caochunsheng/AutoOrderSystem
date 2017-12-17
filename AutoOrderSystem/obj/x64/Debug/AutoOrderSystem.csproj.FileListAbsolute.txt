@@ -1,0 +1,11 @@
+E:\AutoOrderSystem\AutoOrderSystem\bin\x64\Debug\AutoOrderSystem.exe.config
+E:\AutoOrderSystem\AutoOrderSystem\obj\x64\Debug\AutoOrderSystem.csprojResolveAssemblyReference.cache
+E:\AutoOrderSystem\AutoOrderSystem\obj\x64\Debug\AutoOrderSystem.FrmBase.resources
+E:\AutoOrderSystem\AutoOrderSystem\obj\x64\Debug\AutoOrderSystem.FrmLogin.resources
+E:\AutoOrderSystem\AutoOrderSystem\obj\x64\Debug\AutoOrderSystem.FrmMain.resources
+E:\AutoOrderSystem\AutoOrderSystem\obj\x64\Debug\AutoOrderSystem.FrmNewOrder.resources
+E:\AutoOrderSystem\AutoOrderSystem\obj\x64\Debug\AutoOrderSystem.FrmOrderPreview.resources
+E:\AutoOrderSystem\AutoOrderSystem\obj\x64\Debug\Art.Scheduling.OrderForm.FrmSchedulingOrders.resources
+E:\AutoOrderSystem\AutoOrderSystem\obj\x64\Debug\AutoOrderSystem.Properties.Resources.resources
+E:\AutoOrderSystem\AutoOrderSystem\obj\x64\Debug\AutoOrderSystem.FrmMain.sq.resources
+E:\AutoOrderSystem\AutoOrderSystem\obj\x64\Debug\AutoOrderSystem.csproj.GenerateResource.Cache

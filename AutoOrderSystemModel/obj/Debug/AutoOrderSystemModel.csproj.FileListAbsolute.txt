@@ -1,0 +1,5 @@
+E:\AutoOrderSystem\AutoOrderSystemModel\bin\Debug\AutoOrderSystemModel.dll
+E:\AutoOrderSystem\AutoOrderSystemModel\bin\Debug\AutoOrderSystemModel.pdb
+E:\AutoOrderSystem\AutoOrderSystemModel\obj\Debug\AutoOrderSystemModel.csprojResolveAssemblyReference.cache
+E:\AutoOrderSystem\AutoOrderSystemModel\obj\Debug\AutoOrderSystemModel.dll
+E:\AutoOrderSystem\AutoOrderSystemModel\obj\Debug\AutoOrderSystemModel.pdb
