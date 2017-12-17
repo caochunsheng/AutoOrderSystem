@@ -129,13 +129,17 @@
             // 
             // button_Login
             // 
+            this.button_Login.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(169)))), ((int)(((byte)(156)))));
             this.button_Login.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button_Login.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button_Login.FlatAppearance.BorderSize = 0;
+            this.button_Login.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Login.Location = new System.Drawing.Point(82, 299);
             this.button_Login.Name = "button_Login";
             this.button_Login.Size = new System.Drawing.Size(257, 24);
             this.button_Login.TabIndex = 6;
             this.button_Login.Text = "登录";
-            this.button_Login.UseVisualStyleBackColor = true;
+            this.button_Login.UseVisualStyleBackColor = false;
             this.button_Login.Click += new System.EventHandler(this.button_Login_Click);
             // 
             // timer_IsLogined

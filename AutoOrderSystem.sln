@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoOrderSystemCommon", "Au
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTClient", "Dev_RESTClient\RESTClient\RESTClient.csproj", "{58B9BB0C-D3E6-407E-A355-2DD8AA92DFBB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoOrderSystemUI", "AutoOrderSystemUI\AutoOrderSystemUI.csproj", "{63D25F8E-FED0-4E3C-8719-13FF29BB5314}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,18 @@ Global
 		{58B9BB0C-D3E6-407E-A355-2DD8AA92DFBB}.Release|x64.Build.0 = Release|x64
 		{58B9BB0C-D3E6-407E-A355-2DD8AA92DFBB}.Release|x86.ActiveCfg = Release|x86
 		{58B9BB0C-D3E6-407E-A355-2DD8AA92DFBB}.Release|x86.Build.0 = Release|x86
+		{63D25F8E-FED0-4E3C-8719-13FF29BB5314}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63D25F8E-FED0-4E3C-8719-13FF29BB5314}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63D25F8E-FED0-4E3C-8719-13FF29BB5314}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{63D25F8E-FED0-4E3C-8719-13FF29BB5314}.Debug|x64.Build.0 = Debug|Any CPU
+		{63D25F8E-FED0-4E3C-8719-13FF29BB5314}.Debug|x86.ActiveCfg = Debug|x86
+		{63D25F8E-FED0-4E3C-8719-13FF29BB5314}.Debug|x86.Build.0 = Debug|x86
+		{63D25F8E-FED0-4E3C-8719-13FF29BB5314}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63D25F8E-FED0-4E3C-8719-13FF29BB5314}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63D25F8E-FED0-4E3C-8719-13FF29BB5314}.Release|x64.ActiveCfg = Release|Any CPU
+		{63D25F8E-FED0-4E3C-8719-13FF29BB5314}.Release|x64.Build.0 = Release|Any CPU
+		{63D25F8E-FED0-4E3C-8719-13FF29BB5314}.Release|x86.ActiveCfg = Release|Any CPU
+		{63D25F8E-FED0-4E3C-8719-13FF29BB5314}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
