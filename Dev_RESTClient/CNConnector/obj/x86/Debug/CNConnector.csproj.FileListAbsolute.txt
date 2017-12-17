@@ -1,0 +1,5 @@
+C:\ACC\CNConnector.dll
+C:\ACC\CNConnector.pdb
+E:\SourceCode\Dev_RESTClient\CNConnector\obj\x86\Debug\CNConnector.csprojResolveAssemblyReference.cache
+E:\SourceCode\Dev_RESTClient\CNConnector\obj\x86\Debug\CNConnector.dll
+E:\SourceCode\Dev_RESTClient\CNConnector\obj\x86\Debug\CNConnector.pdb

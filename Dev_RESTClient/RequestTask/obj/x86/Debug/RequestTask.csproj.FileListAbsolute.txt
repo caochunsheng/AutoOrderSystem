@@ -1,0 +1,10 @@
+C:\ACC\RequestTask.exe.config
+C:\ACC\RequestTask.exe
+C:\ACC\RequestTask.pdb
+E:\SourceCode\Dev_RESTClient\RequestTask\obj\x86\Debug\RequestTask.csprojResolveAssemblyReference.cache
+E:\SourceCode\Dev_RESTClient\RequestTask\obj\x86\Debug\RequestTask.DbProcedureTest.resources
+E:\SourceCode\Dev_RESTClient\RequestTask\obj\x86\Debug\RequestTask.Properties.Resources.resources
+E:\SourceCode\Dev_RESTClient\RequestTask\obj\x86\Debug\RequestTask.RequestTask.resources
+E:\SourceCode\Dev_RESTClient\RequestTask\obj\x86\Debug\RequestTask.csproj.GenerateResource.Cache
+E:\SourceCode\Dev_RESTClient\RequestTask\obj\x86\Debug\RequestTask.exe
+E:\SourceCode\Dev_RESTClient\RequestTask\obj\x86\Debug\RequestTask.pdb

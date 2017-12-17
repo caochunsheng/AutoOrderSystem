@@ -31,7 +31,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
     <PlatformTarget>x86</PlatformTarget>
-    <OutputPath>..\..\AutoOrderSystem\</OutputPath>
+    <OutputPath>bin\x86\Debug\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <PlatformTarget>x86</PlatformTarget>
@@ -94,13 +94,13 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Dev_RESTClient\RESTClient\RESTClient.csproj">
-      <Project>{58b9bb0c-d3e6-407e-a355-2dd8aa92dfbb}</Project>
-      <Name>RESTClient</Name>
-    </ProjectReference>
     <ProjectReference Include="..\AutoOrderSystemModel\AutoOrderSystemModel.csproj">
       <Project>{72ce8423-605d-445b-bf71-12d2ad83dbe4}</Project>
       <Name>AutoOrderSystemModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dev_RESTClient\RESTClient\RESTClient.csproj">
+      <Project>{58b9bb0c-d3e6-407e-a355-2dd8aa92dfbb}</Project>
+      <Name>RESTClient</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

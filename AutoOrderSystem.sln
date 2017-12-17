@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoOrderSystem", "AutoOrde
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutoOrderSystemCommon", "AutoOrderSystemCommon\AutoOrderSystemCommon.csproj", "{DB44C210-9FD7-4621-9A35-FCB1241F57F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTClient", "..\Dev_RESTClient\RESTClient\RESTClient.csproj", "{58B9BB0C-D3E6-407E-A355-2DD8AA92DFBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTClient", "Dev_RESTClient\RESTClient\RESTClient.csproj", "{58B9BB0C-D3E6-407E-A355-2DD8AA92DFBB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

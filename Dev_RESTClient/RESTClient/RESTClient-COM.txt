@@ -1,0 +1,16 @@
+#ifdef _DEBUG
+#import "..\RESTClient\bin\Debug\RESTClient.tlb" raw_interfaces_only
+#else
+#import "..\RESTClient\bin\Release\RESTClient.tlb" raw_interfaces_only
+#endif
+using namespace RESTClient;
+
+
+HRESULT hr = CoInitialize(NULL);
+IHoleLayoutPtr pIHole(__uuidof(HoleLayoutPreview));
+VARIANT_BOOL result;
+BSTR bstr_put = ::SysAllocString(L"c:\\acc\\design_to_cam.xml");
+hr = pIHole->CreateImage(&bstr_put, &result);
+::SysFreeString(bstr_put);
+CoUninitialize();
+

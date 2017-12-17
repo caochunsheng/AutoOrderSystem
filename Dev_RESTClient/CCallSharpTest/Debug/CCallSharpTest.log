@@ -1,0 +1,14 @@
+﻿  stdafx.cpp
+d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\afx.h(38): warning C4996: 'MBCS_Support_Deprecated_In_MFC': MBCS support in MFC is deprecated and may be removed in a future version of MFC.
+  d:\program files (x86)\microsoft visual studio 14.0\vc\atlmfc\include\afx.h(33): note: 参见“MBCS_Support_Deprecated_In_MFC”的声明
+  RegisterSharpCOM.cpp
+e:\sourcecode\dev_restclient\ccallsharptest\registersharpcom.cpp(137): warning C4996: 'access': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _access. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\corecrt_io.h(439): note: 参见“access”的声明
+  CCallSharpTestDlg.cpp
+e:\sourcecode\dev_restclient\ccallsharptest\ccallsharptestdlg.cpp(96): warning C4244: “初始化”: 从“HRESULT”转换到“VARIANT_BOOL”，可能丢失数据
+e:\sourcecode\dev_restclient\ccallsharptest\ccallsharptestdlg.cpp(124): warning C4244: “初始化”: 从“HRESULT”转换到“VARIANT_BOOL”，可能丢失数据
+e:\sourcecode\dev_restclient\ccallsharptest\ccallsharptestdlg.cpp(155): warning C4244: “初始化”: 从“HRESULT”转换到“VARIANT_BOOL”，可能丢失数据
+  CCallSharpTest.cpp
+  正在生成代码...
+  CCallSharpTest.vcxproj -> E:\SourceCode\Dev_RESTClient\Debug\CCallSharpTest.exe
+  CCallSharpTest.vcxproj -> E:\SourceCode\Dev_RESTClient\Debug\CCallSharpTest.pdb (Full PDB)

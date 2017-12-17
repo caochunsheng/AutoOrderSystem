@@ -1,0 +1,8 @@
+C:\ACC\BinPackingManager.dll
+C:\ACC\BinPackingManager.pdb
+E:\SourceCode\Dev_RESTClient\BinPackingManager\obj\Debug\BinPackingManager.csprojResolveAssemblyReference.cache
+E:\SourceCode\Dev_RESTClient\BinPackingManager\obj\Debug\BinPacking.PackingManager.resources
+E:\SourceCode\Dev_RESTClient\BinPackingManager\obj\Debug\BinPackingManager.Properties.Resources.resources
+E:\SourceCode\Dev_RESTClient\BinPackingManager\obj\Debug\BinPackingManager.csproj.GenerateResource.Cache
+E:\SourceCode\Dev_RESTClient\BinPackingManager\obj\Debug\BinPackingManager.dll
+E:\SourceCode\Dev_RESTClient\BinPackingManager\obj\Debug\BinPackingManager.pdb

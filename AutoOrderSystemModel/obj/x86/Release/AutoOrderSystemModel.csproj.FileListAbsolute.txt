@@ -1,6 +1,0 @@
-E:\AutoOrderSystem\AutoOrderSystemModel\bin\x86\Release\AutoOrderSystemModel.dll
-E:\AutoOrderSystem\AutoOrderSystemModel\obj\x86\Release\AutoOrderSystemModel.dll
-E:\SourceCode\Dev_AutoOrderSystem\AutoOrderSystemModel\bin\x86\Release\AutoOrderSystemModel.dll
-E:\SourceCode\Dev_AutoOrderSystem\AutoOrderSystemModel\obj\x86\Release\AutoOrderSystemModel.dll
-E:\Executable\AutoOrderSystem\AutoOrderSystemModel.dll
-E:\SourceCode\Dev_AutoOrderSystem\AutoOrderSystemModel\obj\x86\Release\AutoOrderSystemModel.csprojResolveAssemblyReference.cache

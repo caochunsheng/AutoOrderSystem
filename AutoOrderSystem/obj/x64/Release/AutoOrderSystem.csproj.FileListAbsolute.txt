@@ -1,1 +1,0 @@
-E:\AutoOrderSystem\AutoOrderSystem\bin\x64\Release\AutoOrderSystem.exe.config

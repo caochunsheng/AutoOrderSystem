@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE3ADF0D-ED17-454A-BD9D-E62976019C4F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BinPackingManager</RootNamespace>
+    <AssemblyName>BinPackingManager</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\ACC\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BinPackingInfo.cs" />
+    <Compile Include="PackingManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PackingManager.designer.cs">
+      <DependentUpon>PackingManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PackingManager.resx">
+      <DependentUpon>PackingManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Complete_and_ok_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Complete_and_ok_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Complete_and_ok_16xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Complete_and_ok_16xMD_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Complete_and_ok_16xSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Complete_and_ok_16xSM_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Complete_and_ok_32xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Complete_and_ok_32xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Complete_and_ok_32xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Complete_and_ok_32xMD_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Complete_and_ok_32xSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Complete_and_ok_32xSM_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Critical_16xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Critical_16xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Critical_16xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Critical_16xMD_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Critical_16xSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Critical_16xSM_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Critical_32xLG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Critical_32xLG_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Critical_32xMD.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Critical_32xMD_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Critical_32xSM.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StatusAnnotations_Critical_32xSM_color.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CNConnector\CNConnector.csproj">
+      <Project>{D8D8E9E8-1B08-4CC4-84F6-ED34324D0DF2}</Project>
+      <Name>CNConnector</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

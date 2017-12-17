@@ -1,0 +1,339 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 14.00.24215.1 (b6ccadb9).
+//
+// e:\sourcecode\dev_restclient\ccallsharptest\debug\restclient.tlh
+//
+// C++ source equivalent of Win32 type library RESTClient.tlb
+// compiler-generated file created 05/03/17 at 09:59:38 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace RESTClient {
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("55ae829a-90a6-47bc-ac2a-c145c260979c"))
+/* LIBID */ __RESTClient;
+struct /* coclass */ Login;
+struct __declspec(uuid("d2a7acc4-9f3e-4a89-8a1b-1a79271921bf"))
+/* dual interface */ IHoleLayout;
+struct /* coclass */ HoleLayoutPreview;
+struct /* coclass */ WebUtil;
+struct /* coclass */ Coordinate;
+struct /* coclass */ WorkOrder;
+struct /* coclass */ MESaw;
+struct /* coclass */ MimeTypes;
+struct /* coclass */ GZip;
+struct /* coclass */ DbComm;
+struct /* coclass */ Logger;
+struct /* coclass */ Fast;
+struct /* coclass */ ConfigNode;
+struct /* coclass */ AssemblyLine;
+struct /* coclass */ XmlConfig;
+struct /* coclass */ SharpPoint3D;
+struct /* coclass */ DrillHole;
+struct /* coclass */ ProcessBoard;
+struct /* coclass */ UploadFile;
+struct /* coclass */ WebRequestSession;
+struct /* coclass */ RemoteCall;
+struct __declspec(uuid("16607626-9e50-42a4-a0d1-abc07c342adc"))
+/* dual interface */ IArtCloud;
+struct /* coclass */ ArtCloudClass;
+struct __declspec(uuid("2817aee1-5919-32c4-a0c6-c4acf6224189"))
+/* dual interface */ _Login;
+struct __declspec(uuid("f582545a-628c-3a00-a8aa-453c59ecc500"))
+/* dual interface */ _WebUtil;
+struct __declspec(uuid("3ae3d745-8358-3456-81f7-1c126ffa35e6"))
+/* dual interface */ _Coordinate;
+struct __declspec(uuid("65c9bfdf-30f2-3931-a9c6-4f3446fa7589"))
+/* dual interface */ _WorkOrder;
+struct __declspec(uuid("8058c7e2-fec4-35ab-8cf9-bc95d02a0fde"))
+/* dual interface */ _MESaw;
+struct __declspec(uuid("854dd1a2-63e7-3b10-ae02-4cdd29b9a838"))
+/* dual interface */ _MimeTypes;
+struct __declspec(uuid("81b0251d-d216-3597-9d36-666689eb5cb0"))
+/* dual interface */ _GZip;
+struct __declspec(uuid("cc8b802f-1318-376d-b3f8-db0c90ec8e25"))
+/* dual interface */ _DbComm;
+struct __declspec(uuid("5fea7d9e-75dd-31ec-a5b9-3a0949a5a332"))
+/* dual interface */ _Logger;
+struct __declspec(uuid("b2a97a96-eb60-3faf-829c-d00ede6b744f"))
+/* dual interface */ _Fast;
+struct __declspec(uuid("da84be3d-3717-3eea-b22c-8a1554c51bec"))
+/* dual interface */ _ConfigNode;
+struct __declspec(uuid("e1dcaf15-0fdd-3aaa-9efe-b0980e346f6a"))
+/* dual interface */ _AssemblyLine;
+struct __declspec(uuid("7f77553e-1544-3b12-a9ca-1b8dbaa8dd01"))
+/* dual interface */ _XmlConfig;
+struct __declspec(uuid("d6cad81d-2c0e-3dad-89c7-0a027af96e0e"))
+/* dual interface */ _SharpPoint3D;
+struct __declspec(uuid("73932e08-f90b-375a-a2d4-3b2c76ec5e99"))
+/* dual interface */ _DrillHole;
+struct __declspec(uuid("2b5dafbe-4d09-3d7c-971d-170de03629c8"))
+/* dual interface */ _ProcessBoard;
+struct __declspec(uuid("9d23376f-c3bc-3800-b99c-e1376686556b"))
+/* dual interface */ _UploadFile;
+struct __declspec(uuid("a517dfad-43e1-3ede-8b3e-54d5730ed7fc"))
+/* dual interface */ _WebRequestSession;
+struct __declspec(uuid("6ec0c21b-445d-3b44-9bf7-9b60fc43d266"))
+/* dual interface */ _RemoteCall;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(IHoleLayout, __uuidof(IHoleLayout));
+_COM_SMARTPTR_TYPEDEF(IArtCloud, __uuidof(IArtCloud));
+_COM_SMARTPTR_TYPEDEF(_Login, __uuidof(_Login));
+_COM_SMARTPTR_TYPEDEF(_WebUtil, __uuidof(_WebUtil));
+_COM_SMARTPTR_TYPEDEF(_Coordinate, __uuidof(_Coordinate));
+_COM_SMARTPTR_TYPEDEF(_WorkOrder, __uuidof(_WorkOrder));
+_COM_SMARTPTR_TYPEDEF(_MESaw, __uuidof(_MESaw));
+_COM_SMARTPTR_TYPEDEF(_MimeTypes, __uuidof(_MimeTypes));
+_COM_SMARTPTR_TYPEDEF(_GZip, __uuidof(_GZip));
+_COM_SMARTPTR_TYPEDEF(_DbComm, __uuidof(_DbComm));
+_COM_SMARTPTR_TYPEDEF(_Logger, __uuidof(_Logger));
+_COM_SMARTPTR_TYPEDEF(_Fast, __uuidof(_Fast));
+_COM_SMARTPTR_TYPEDEF(_ConfigNode, __uuidof(_ConfigNode));
+_COM_SMARTPTR_TYPEDEF(_AssemblyLine, __uuidof(_AssemblyLine));
+_COM_SMARTPTR_TYPEDEF(_XmlConfig, __uuidof(_XmlConfig));
+_COM_SMARTPTR_TYPEDEF(_SharpPoint3D, __uuidof(_SharpPoint3D));
+_COM_SMARTPTR_TYPEDEF(_DrillHole, __uuidof(_DrillHole));
+_COM_SMARTPTR_TYPEDEF(_ProcessBoard, __uuidof(_ProcessBoard));
+_COM_SMARTPTR_TYPEDEF(_UploadFile, __uuidof(_UploadFile));
+_COM_SMARTPTR_TYPEDEF(_WebRequestSession, __uuidof(_WebRequestSession));
+_COM_SMARTPTR_TYPEDEF(_RemoteCall, __uuidof(_RemoteCall));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("67614cbd-b962-3231-937a-14ac35e40107"))
+Login;
+    // [ default ] interface _Login
+    // interface _Object
+    // interface IComponent
+    // interface IDisposable
+    // interface IWin32Window
+
+struct __declspec(uuid("d2a7acc4-9f3e-4a89-8a1b-1a79271921bf"))
+IHoleLayout : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall CreateHoleLayoutImage (
+        /*[in]*/ BSTR * xmlFile,
+        /*[out,retval]*/ VARIANT_BOOL * pRetVal ) = 0;
+};
+
+struct __declspec(uuid("a4ec2f30-f074-47a2-9f1d-cca37bd7b74e"))
+HoleLayoutPreview;
+    // interface _Object
+    // [ default ] interface IHoleLayout
+
+struct __declspec(uuid("1924510c-c96d-3606-80fe-a5bce5f8be6e"))
+WebUtil;
+    // [ default ] interface _WebUtil
+    // interface _Object
+
+struct __declspec(uuid("ce65e52e-2653-33d8-8914-dc8e5dde9d37"))
+Coordinate;
+    // [ default ] interface _Coordinate
+    // interface _Object
+
+struct __declspec(uuid("3ef4fba5-ee76-3559-8832-5fce42ca451b"))
+WorkOrder;
+    // [ default ] interface _WorkOrder
+    // interface _Object
+
+struct __declspec(uuid("99d31d31-e0e3-3c0a-b801-fba91756da4c"))
+MESaw;
+    // [ default ] interface _MESaw
+    // interface _Object
+
+struct __declspec(uuid("23c58270-663f-3e9c-906e-ce43eb4636e6"))
+MimeTypes;
+    // [ default ] interface _MimeTypes
+    // interface _Object
+
+struct __declspec(uuid("f6e978cb-debb-39aa-8baf-afd2b5aa3418"))
+GZip;
+    // [ default ] interface _GZip
+    // interface _Object
+
+struct __declspec(uuid("0b1af3c1-518f-3d7e-ad73-3a05bf1f8b7d"))
+DbComm;
+    // [ default ] interface _DbComm
+    // interface _Object
+
+struct __declspec(uuid("50ead004-d888-3c97-b2de-abad27c84def"))
+Logger;
+    // [ default ] interface _Logger
+    // interface _Delegate
+    // interface _Object
+    // interface ICloneable
+    // interface ISerializable
+
+struct __declspec(uuid("88f76924-9a3d-3015-8df0-75c28a0fb989"))
+Fast;
+    // [ default ] interface _Fast
+    // interface _Object
+
+struct __declspec(uuid("1ce372fb-650a-30fc-b96e-a0b2f705a166"))
+ConfigNode;
+    // [ default ] interface _ConfigNode
+    // interface _Object
+
+struct __declspec(uuid("07b776cf-9903-3833-b149-c7e9004b434c"))
+AssemblyLine;
+    // [ default ] interface _AssemblyLine
+    // interface _Object
+
+struct __declspec(uuid("3acabd60-0989-3f99-833f-ffc7f93b4ad9"))
+XmlConfig;
+    // [ default ] interface _XmlConfig
+    // interface _Object
+
+struct __declspec(uuid("e28d1d25-8a43-3c3a-87c2-be83097f8e8c"))
+SharpPoint3D;
+    // [ default ] interface _SharpPoint3D
+    // interface _Object
+
+struct __declspec(uuid("886f1b83-44b3-3fbd-bb99-ff9afee6cb8a"))
+DrillHole;
+    // [ default ] interface _DrillHole
+    // interface _Object
+
+struct __declspec(uuid("fe6bdef8-7b71-3018-85a4-4436eb0beb33"))
+ProcessBoard;
+    // [ default ] interface _ProcessBoard
+    // interface _Object
+
+struct __declspec(uuid("fbfc4810-c63f-3e72-b7ed-1d2ebbc7d135"))
+UploadFile;
+    // [ default ] interface _UploadFile
+    // interface _Object
+
+struct __declspec(uuid("47346828-5909-3909-8237-812b5dc5f218"))
+WebRequestSession;
+    // [ default ] interface _WebRequestSession
+    // interface _Object
+
+struct __declspec(uuid("594192fe-192a-36e9-b5e9-0782ab5eab94"))
+RemoteCall;
+    // [ default ] interface _RemoteCall
+    // interface _Object
+
+struct __declspec(uuid("16607626-9e50-42a4-a0d1-abc07c342adc"))
+IArtCloud : IDispatch
+{
+    //
+    // Raw methods provided by interface
+    //
+
+      virtual HRESULT __stdcall CuttingStock (
+        /*[in]*/ BSTR type,
+        /*[in]*/ BSTR xmlFile,
+        /*[out,retval]*/ BSTR * pRetVal ) = 0;
+      virtual HRESULT __stdcall Upload (
+        /*[in]*/ BSTR srvRelLibFolder,
+        /*[in]*/ BSTR clnFullPath,
+        /*[in]*/ BSTR srvProcessor,
+        /*[out,retval]*/ BSTR * pRetVal ) = 0;
+      virtual HRESULT __stdcall Download (
+        /*[in]*/ BSTR srvRelLibFolder,
+        /*[in]*/ BSTR clnFullPath,
+        /*[in]*/ BSTR srvProcessor,
+        /*[out,retval]*/ BSTR * pRetVal ) = 0;
+};
+
+struct __declspec(uuid("da5176f0-02ac-4ad8-85b9-dd765bed99d5"))
+ArtCloudClass;
+    // interface _Object
+    // [ default ] interface IArtCloud
+
+struct __declspec(uuid("2817aee1-5919-32c4-a0c6-c4acf6224189"))
+_Login : IDispatch
+{};
+
+struct __declspec(uuid("f582545a-628c-3a00-a8aa-453c59ecc500"))
+_WebUtil : IDispatch
+{};
+
+struct __declspec(uuid("3ae3d745-8358-3456-81f7-1c126ffa35e6"))
+_Coordinate : IDispatch
+{};
+
+struct __declspec(uuid("65c9bfdf-30f2-3931-a9c6-4f3446fa7589"))
+_WorkOrder : IDispatch
+{};
+
+struct __declspec(uuid("8058c7e2-fec4-35ab-8cf9-bc95d02a0fde"))
+_MESaw : IDispatch
+{};
+
+struct __declspec(uuid("854dd1a2-63e7-3b10-ae02-4cdd29b9a838"))
+_MimeTypes : IDispatch
+{};
+
+struct __declspec(uuid("81b0251d-d216-3597-9d36-666689eb5cb0"))
+_GZip : IDispatch
+{};
+
+struct __declspec(uuid("cc8b802f-1318-376d-b3f8-db0c90ec8e25"))
+_DbComm : IDispatch
+{};
+
+struct __declspec(uuid("5fea7d9e-75dd-31ec-a5b9-3a0949a5a332"))
+_Logger : IDispatch
+{};
+
+struct __declspec(uuid("b2a97a96-eb60-3faf-829c-d00ede6b744f"))
+_Fast : IDispatch
+{};
+
+struct __declspec(uuid("da84be3d-3717-3eea-b22c-8a1554c51bec"))
+_ConfigNode : IDispatch
+{};
+
+struct __declspec(uuid("e1dcaf15-0fdd-3aaa-9efe-b0980e346f6a"))
+_AssemblyLine : IDispatch
+{};
+
+struct __declspec(uuid("7f77553e-1544-3b12-a9ca-1b8dbaa8dd01"))
+_XmlConfig : IDispatch
+{};
+
+struct __declspec(uuid("d6cad81d-2c0e-3dad-89c7-0a027af96e0e"))
+_SharpPoint3D : IDispatch
+{};
+
+struct __declspec(uuid("73932e08-f90b-375a-a2d4-3b2c76ec5e99"))
+_DrillHole : IDispatch
+{};
+
+struct __declspec(uuid("2b5dafbe-4d09-3d7c-971d-170de03629c8"))
+_ProcessBoard : IDispatch
+{};
+
+struct __declspec(uuid("9d23376f-c3bc-3800-b99c-e1376686556b"))
+_UploadFile : IDispatch
+{};
+
+struct __declspec(uuid("a517dfad-43e1-3ede-8b3e-54d5730ed7fc"))
+_WebRequestSession : IDispatch
+{};
+
+struct __declspec(uuid("6ec0c21b-445d-3b44-9bf7-9b60fc43d266"))
+_RemoteCall : IDispatch
+{};
+
+} // namespace RESTClient
+
+#pragma pack(pop)
