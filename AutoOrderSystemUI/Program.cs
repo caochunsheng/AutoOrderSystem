@@ -17,7 +17,7 @@ namespace AutoOrderSystemUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmBase());
+            Application.Run(new FrmMain());
         }
     }
 }

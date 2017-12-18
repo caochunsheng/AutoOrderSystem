@@ -63,6 +63,16 @@ namespace AutoOrderSystem.UI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap add_order_32px {
+            get {
+                object obj = ResourceManager.GetObject("add_order_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap ArtismanLogo {
             get {
                 object obj = ResourceManager.GetObject("ArtismanLogo", resourceCulture);
@@ -83,6 +93,36 @@ namespace AutoOrderSystem.UI.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        internal static System.Drawing.Bitmap commit_32px {
+            get {
+                object obj = ResourceManager.GetObject("commit_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_order_32px {
+            get {
+                object obj = ResourceManager.GetObject("delete_order_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap ERPorder_32px {
+            get {
+                object obj = ResourceManager.GetObject("ERPorder_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         internal static System.Drawing.Bitmap Max {
             get {
                 object obj = ResourceManager.GetObject("Max", resourceCulture);
@@ -96,6 +136,16 @@ namespace AutoOrderSystem.UI.Properties {
         internal static System.Drawing.Bitmap Min {
             get {
                 object obj = ResourceManager.GetObject("Min", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap Normal {
+            get {
+                object obj = ResourceManager.GetObject("Normal", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
