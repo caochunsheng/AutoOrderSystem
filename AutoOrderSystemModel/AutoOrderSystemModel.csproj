@@ -55,6 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExOrder.cs" />
+    <Compile Include="ExOrderItem.cs" />
     <Compile Include="WebParams.cs" />
     <Compile Include="Order.cs" />
     <Compile Include="Part.cs" />

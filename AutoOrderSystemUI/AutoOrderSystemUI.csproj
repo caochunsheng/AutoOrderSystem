@@ -41,6 +41,9 @@
     <OutputPath>bin\x86\Release\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BaseUI">
+      <HintPath>EXDll\BaseUI.dll</HintPath>
+    </Reference>
     <Reference Include="CSkin">
       <HintPath>..\..\..\..\..\SourceCode\Dev_ArtCloud_Scheduling _PanelFurniture\ArtScheduling\DLL\CSkin.dll</HintPath>
     </Reference>
@@ -64,10 +67,19 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBase2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBase2.Designer.cs">
+      <DependentUpon>FrmBase2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBase2.resx">
+      <DependentUpon>FrmBase2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -118,6 +130,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ERPorder_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excelorder_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
