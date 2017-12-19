@@ -61,6 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmERPOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmERPOrder.Designer.cs">
+      <DependentUpon>FrmERPOrder.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +81,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmERPOrder.resx">
+      <DependentUpon>FrmERPOrder.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +145,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AutoOrderSystemCommon\AutoOrderSystemCommon.csproj">
+      <Project>{db44c210-9fd7-4621-9a35-fcb1241f57f9}</Project>
+      <Name>AutoOrderSystemCommon</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AutoOrderSystemModel\AutoOrderSystemModel.csproj">
+      <Project>{72ce8423-605d-445b-bf71-12d2ad83dbe4}</Project>
+      <Name>AutoOrderSystemModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Dev_RESTClient\RESTClient\RESTClient.csproj">
+      <Project>{58b9bb0c-d3e6-407e-a355-2dd8aa92dfbb}</Project>
+      <Name>RESTClient</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -85,6 +85,7 @@
     <Compile Include="Common.cs" />
     <Compile Include="ExcelHelper.cs" />
     <Compile Include="LogHelper.cs" />
+    <Compile Include="OrderXml.cs" />
     <Compile Include="ProductRules.cs" />
     <Compile Include="ProductTypeLib.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
