@@ -49,15 +49,18 @@ namespace AutoOrderSystem.UI
             this.pnlMain = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvOrder = new CCWin.SkinControl.SkinDataGridView();
-            this.ColSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ColOrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCustomerPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCustomerAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColOrderDetail = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.menuDgvOrder = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuItemSelectAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItemCancelAll = new System.Windows.Forms.ToolStripMenuItem();
             this.dgvOrderItem = new CCWin.SkinControl.SkinDataGridView();
+            this.ColProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColProductType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColProductCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColModelSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColProductSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColProductCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColRemarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btnAddOrder = new System.Windows.Forms.ToolStripButton();
             this.btnDelOrder = new System.Windows.Forms.ToolStripButton();
@@ -66,16 +69,15 @@ namespace AutoOrderSystem.UI
             this.btnExcelOrder = new System.Windows.Forms.ToolStripButton();
             this.pnlBottom = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ColProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColProductType = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColModel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColModelSource = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColProductSize = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColProductCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColRemarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.menuDgvOrder = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.menuItemSelectAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItemCancelAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.ColSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColOrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCustomerPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCustomerAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColOrderRemarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColOrderDetail = new System.Windows.Forms.DataGridViewLinkColumn();
             this.pnlTop.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -83,10 +85,10 @@ namespace AutoOrderSystem.UI
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
+            this.menuDgvOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItem)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.menuDgvOrder.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlTop
@@ -235,6 +237,7 @@ namespace AutoOrderSystem.UI
             this.ColCustomerAddress,
             this.ColOrderDate,
             this.ColDeliveryDate,
+            this.ColOrderRemarks,
             this.ColOrderDetail});
             this.dgvOrder.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvOrder.ContextMenuStrip = this.menuDgvOrder;
@@ -268,54 +271,27 @@ namespace AutoOrderSystem.UI
             this.dgvOrder.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
             this.dgvOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentClick);
             // 
-            // ColSelected
+            // menuDgvOrder
             // 
-            this.ColSelected.HeaderText = "选中";
-            this.ColSelected.Name = "ColSelected";
+            this.menuDgvOrder.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItemSelectAll,
+            this.menuItemCancelAll});
+            this.menuDgvOrder.Name = "menuDgvOrder";
+            this.menuDgvOrder.Size = new System.Drawing.Size(99, 48);
             // 
-            // ColOrderNo
+            // menuItemSelectAll
             // 
-            this.ColOrderNo.HeaderText = "订单编号";
-            this.ColOrderNo.Name = "ColOrderNo";
-            this.ColOrderNo.ReadOnly = true;
-            this.ColOrderNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColOrderNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.menuItemSelectAll.Name = "menuItemSelectAll";
+            this.menuItemSelectAll.Size = new System.Drawing.Size(98, 22);
+            this.menuItemSelectAll.Text = "全选";
+            this.menuItemSelectAll.Click += new System.EventHandler(this.menuItemSelectAll_Click);
             // 
-            // ColCustomerName
+            // menuItemCancelAll
             // 
-            this.ColCustomerName.HeaderText = "客户名称";
-            this.ColCustomerName.Name = "ColCustomerName";
-            this.ColCustomerName.ReadOnly = true;
-            // 
-            // ColCustomerPhone
-            // 
-            this.ColCustomerPhone.HeaderText = "客户电话";
-            this.ColCustomerPhone.Name = "ColCustomerPhone";
-            this.ColCustomerPhone.ReadOnly = true;
-            // 
-            // ColCustomerAddress
-            // 
-            this.ColCustomerAddress.HeaderText = "客户地址";
-            this.ColCustomerAddress.Name = "ColCustomerAddress";
-            this.ColCustomerAddress.ReadOnly = true;
-            // 
-            // ColOrderDate
-            // 
-            this.ColOrderDate.HeaderText = "下单日期";
-            this.ColOrderDate.Name = "ColOrderDate";
-            this.ColOrderDate.ReadOnly = true;
-            // 
-            // ColDeliveryDate
-            // 
-            this.ColDeliveryDate.HeaderText = "交付日期";
-            this.ColDeliveryDate.Name = "ColDeliveryDate";
-            this.ColDeliveryDate.ReadOnly = true;
-            // 
-            // ColOrderDetail
-            // 
-            this.ColOrderDetail.HeaderText = "订单详情";
-            this.ColOrderDetail.Name = "ColOrderDetail";
-            this.ColOrderDetail.ReadOnly = true;
+            this.menuItemCancelAll.Name = "menuItemCancelAll";
+            this.menuItemCancelAll.Size = new System.Drawing.Size(98, 22);
+            this.menuItemCancelAll.Text = "取消";
+            this.menuItemCancelAll.Click += new System.EventHandler(this.menuItemCancelAll_Click);
             // 
             // dgvOrderItem
             // 
@@ -341,6 +317,7 @@ namespace AutoOrderSystem.UI
             this.dgvOrderItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColProductName,
             this.ColProductType,
+            this.ColProductCode,
             this.ColModel,
             this.ColModelSource,
             this.ColProductSize,
@@ -376,6 +353,48 @@ namespace AutoOrderSystem.UI
             this.dgvOrderItem.TitleBack = null;
             this.dgvOrderItem.TitleBackColorBegin = System.Drawing.Color.White;
             this.dgvOrderItem.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
+            // 
+            // ColProductName
+            // 
+            this.ColProductName.HeaderText = "产品名称";
+            this.ColProductName.Name = "ColProductName";
+            this.ColProductName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ColProductType
+            // 
+            this.ColProductType.HeaderText = "产品类型";
+            this.ColProductType.Name = "ColProductType";
+            this.ColProductType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // ColProductCode
+            // 
+            this.ColProductCode.HeaderText = "产品编号";
+            this.ColProductCode.Name = "ColProductCode";
+            // 
+            // ColModel
+            // 
+            this.ColModel.HeaderText = "模型路径";
+            this.ColModel.Name = "ColModel";
+            // 
+            // ColModelSource
+            // 
+            this.ColModelSource.HeaderText = "模型来源";
+            this.ColModelSource.Name = "ColModelSource";
+            // 
+            // ColProductSize
+            // 
+            this.ColProductSize.HeaderText = "产品尺寸";
+            this.ColProductSize.Name = "ColProductSize";
+            // 
+            // ColProductCount
+            // 
+            this.ColProductCount.HeaderText = "产品数量";
+            this.ColProductCount.Name = "ColProductCount";
+            // 
+            // ColRemarks
+            // 
+            this.ColRemarks.HeaderText = "备注信息";
+            this.ColRemarks.Name = "ColRemarks";
             // 
             // toolStrip1
             // 
@@ -464,64 +483,80 @@ namespace AutoOrderSystem.UI
             this.panel1.Size = new System.Drawing.Size(1284, 635);
             this.panel1.TabIndex = 4;
             // 
-            // ColProductName
+            // ColSelected
             // 
-            this.ColProductName.HeaderText = "产品名称";
-            this.ColProductName.Name = "ColProductName";
-            this.ColProductName.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColSelected.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColSelected.Frozen = true;
+            this.ColSelected.HeaderText = "选中";
+            this.ColSelected.Name = "ColSelected";
+            this.ColSelected.Width = 84;
             // 
-            // ColProductType
+            // ColOrderNo
             // 
-            this.ColProductType.HeaderText = "产品类型";
-            this.ColProductType.Name = "ColProductType";
-            this.ColProductType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColOrderNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColOrderNo.Frozen = true;
+            this.ColOrderNo.HeaderText = "订单编号";
+            this.ColOrderNo.Name = "ColOrderNo";
+            this.ColOrderNo.ReadOnly = true;
+            this.ColOrderNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColOrderNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.ColOrderNo.Width = 84;
             // 
-            // ColModel
+            // ColCustomerName
             // 
-            this.ColModel.HeaderText = "模型路径";
-            this.ColModel.Name = "ColModel";
+            this.ColCustomerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColCustomerName.Frozen = true;
+            this.ColCustomerName.HeaderText = "客户名称";
+            this.ColCustomerName.Name = "ColCustomerName";
+            this.ColCustomerName.ReadOnly = true;
+            this.ColCustomerName.Width = 84;
             // 
-            // ColModelSource
+            // ColCustomerPhone
             // 
-            this.ColModelSource.HeaderText = "模型来源";
-            this.ColModelSource.Name = "ColModelSource";
+            this.ColCustomerPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColCustomerPhone.Frozen = true;
+            this.ColCustomerPhone.HeaderText = "客户电话";
+            this.ColCustomerPhone.Name = "ColCustomerPhone";
+            this.ColCustomerPhone.ReadOnly = true;
+            this.ColCustomerPhone.Width = 84;
             // 
-            // ColProductSize
+            // ColCustomerAddress
             // 
-            this.ColProductSize.HeaderText = "产品尺寸";
-            this.ColProductSize.Name = "ColProductSize";
+            this.ColCustomerAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColCustomerAddress.Frozen = true;
+            this.ColCustomerAddress.HeaderText = "客户地址";
+            this.ColCustomerAddress.Name = "ColCustomerAddress";
+            this.ColCustomerAddress.ReadOnly = true;
+            this.ColCustomerAddress.Width = 83;
             // 
-            // ColProductCount
+            // ColOrderDate
             // 
-            this.ColProductCount.HeaderText = "产品数量";
-            this.ColProductCount.Name = "ColProductCount";
+            this.ColOrderDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColOrderDate.Frozen = true;
+            this.ColOrderDate.HeaderText = "下单日期";
+            this.ColOrderDate.Name = "ColOrderDate";
+            this.ColOrderDate.ReadOnly = true;
+            this.ColOrderDate.Width = 84;
             // 
-            // ColRemarks
+            // ColDeliveryDate
             // 
-            this.ColRemarks.HeaderText = "备注信息";
-            this.ColRemarks.Name = "ColRemarks";
+            this.ColDeliveryDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ColDeliveryDate.Frozen = true;
+            this.ColDeliveryDate.HeaderText = "交付日期";
+            this.ColDeliveryDate.Name = "ColDeliveryDate";
+            this.ColDeliveryDate.ReadOnly = true;
+            this.ColDeliveryDate.Width = 84;
             // 
-            // menuDgvOrder
+            // ColOrderRemarks
             // 
-            this.menuDgvOrder.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuItemSelectAll,
-            this.menuItemCancelAll});
-            this.menuDgvOrder.Name = "menuDgvOrder";
-            this.menuDgvOrder.Size = new System.Drawing.Size(99, 48);
+            this.ColOrderRemarks.HeaderText = "备注信息";
+            this.ColOrderRemarks.Name = "ColOrderRemarks";
             // 
-            // menuItemSelectAll
+            // ColOrderDetail
             // 
-            this.menuItemSelectAll.Name = "menuItemSelectAll";
-            this.menuItemSelectAll.Size = new System.Drawing.Size(98, 22);
-            this.menuItemSelectAll.Text = "全选";
-            this.menuItemSelectAll.Click += new System.EventHandler(this.menuItemSelectAll_Click);
-            // 
-            // menuItemCancelAll
-            // 
-            this.menuItemCancelAll.Name = "menuItemCancelAll";
-            this.menuItemCancelAll.Size = new System.Drawing.Size(98, 22);
-            this.menuItemCancelAll.Text = "取消";
-            this.menuItemCancelAll.Click += new System.EventHandler(this.menuItemCancelAll_Click);
+            this.ColOrderDetail.HeaderText = "订单详情";
+            this.ColOrderDetail.Name = "ColOrderDetail";
+            this.ColOrderDetail.ReadOnly = true;
             // 
             // FrmMain
             // 
@@ -547,11 +582,11 @@ namespace AutoOrderSystem.UI
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
+            this.menuDgvOrder.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrderItem)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            this.menuDgvOrder.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -575,6 +610,17 @@ namespace AutoOrderSystem.UI
         private System.Windows.Forms.SplitContainer splitContainer1;
         private CCWin.SkinControl.SkinDataGridView dgvOrder;
         private CCWin.SkinControl.SkinDataGridView dgvOrderItem;
+        private ContextMenuStrip menuDgvOrder;
+        private ToolStripMenuItem menuItemSelectAll;
+        private ToolStripMenuItem menuItemCancelAll;
+        private DataGridViewTextBoxColumn ColProductName;
+        private DataGridViewTextBoxColumn ColProductType;
+        private DataGridViewTextBoxColumn ColProductCode;
+        private DataGridViewTextBoxColumn ColModel;
+        private DataGridViewTextBoxColumn ColModelSource;
+        private DataGridViewTextBoxColumn ColProductSize;
+        private DataGridViewTextBoxColumn ColProductCount;
+        private DataGridViewTextBoxColumn ColRemarks;
         private DataGridViewCheckBoxColumn ColSelected;
         private DataGridViewTextBoxColumn ColOrderNo;
         private DataGridViewTextBoxColumn ColCustomerName;
@@ -582,16 +628,7 @@ namespace AutoOrderSystem.UI
         private DataGridViewTextBoxColumn ColCustomerAddress;
         private DataGridViewTextBoxColumn ColOrderDate;
         private DataGridViewTextBoxColumn ColDeliveryDate;
+        private DataGridViewTextBoxColumn ColOrderRemarks;
         private DataGridViewLinkColumn ColOrderDetail;
-        private DataGridViewTextBoxColumn ColProductName;
-        private DataGridViewTextBoxColumn ColProductType;
-        private DataGridViewTextBoxColumn ColModel;
-        private DataGridViewTextBoxColumn ColModelSource;
-        private DataGridViewTextBoxColumn ColProductSize;
-        private DataGridViewTextBoxColumn ColProductCount;
-        private DataGridViewTextBoxColumn ColRemarks;
-        private ContextMenuStrip menuDgvOrder;
-        private ToolStripMenuItem menuItemSelectAll;
-        private ToolStripMenuItem menuItemCancelAll;
     }
 }

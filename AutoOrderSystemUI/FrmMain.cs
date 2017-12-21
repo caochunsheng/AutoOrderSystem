@@ -1,4 +1,5 @@
-﻿using AutoOrderSystem.Model;
+﻿using AutoOrderSystem.Common;
+using AutoOrderSystem.Model;
 using RESTClient;
 using System;
 using System.Collections.Generic;
@@ -252,11 +253,10 @@ namespace AutoOrderSystem.UI
                 dgvOrder.Rows[index].Cells["ColCustomerName"].Value = objOrder.CustomerName;
                 dgvOrder.Rows[index].Cells["ColCustomerPhone"].Value = objOrder.CustomerPhone;
                 dgvOrder.Rows[index].Cells["ColCustomerAddress"].Value = objOrder.CustomerAddress;
-                dgvOrder.Rows[index].Cells["ColOrderDate"].Value = objOrder.OrderDate;
-                dgvOrder.Rows[index].Cells["ColDeliveryDate"].Value = objOrder.DeliveryDate;
+                dgvOrder.Rows[index].Cells["ColOrderDate"].Value = objOrder.OrderDate.ToShortDateString();
+                dgvOrder.Rows[index].Cells["ColDeliveryDate"].Value = objOrder.DeliveryDate.ToShortDateString();
+                dgvOrder.Rows[index].Cells["ColOrderRemarks"].Value = objOrder.Remarks;
                 dgvOrder.Rows[index].Cells["ColOrderDetail"].Value = "【详情】";
-
-
             }
         }
         private void ShowOrderItemList(List<ExOrderItem> itemList)
@@ -268,6 +268,7 @@ namespace AutoOrderSystem.UI
                 index = dgvOrderItem.Rows.Add();
                 dgvOrderItem.Rows[index].Cells["ColProductName"].Value = objItem.ProductName;
                 dgvOrderItem.Rows[index].Cells["ColProductType"].Value = objItem.ProductType;
+                dgvOrderItem.Rows[index].Cells["ColProductCode"].Value = objItem.ProductCode;
                 dgvOrderItem.Rows[index].Cells["ColModel"].Value = objItem.Model;
                 dgvOrderItem.Rows[index].Cells["ColModelSource"].Value = objItem.ModelSource;
                 dgvOrderItem.Rows[index].Cells["ColProductSize"].Value = $"{objItem.Length}*{objItem.Width}*{objItem.Height}";
@@ -279,22 +280,43 @@ namespace AutoOrderSystem.UI
         private void btnSubmitOrder_Click(object sender, EventArgs e)
         {
             dgvOrder.EndEdit();
-            List<string> orderNoList = new List<string>();
+            List<string> unselectedorderNoList = new List<string>();
             foreach (DataGridViewRow dr in dgvOrder.Rows)
             {
-                if (Convert.ToBoolean(dr.Cells["ColSelected"].Value))
+                if (!Convert.ToBoolean(dr.Cells["ColSelected"].Value))//筛选出没选中的，移除，剩下的就是选中的。
                 {
-                    orderNoList.Add(dr.Cells["ColOrderNo"].Value.ToString());
+                    unselectedorderNoList.Add(dr.Cells["ColOrderNo"].Value.ToString());
                 }
             }
-            if (orderNoList.Count == 0)
+            foreach (string orderNo in unselectedorderNoList)
             {
-                MessageBox.Show("抱歉，您没有选中任何一个订单！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
+                ExOrder selectedOrder = _orderList.Find(order =>
+                {
+                    if (order.OrderNo == orderNo)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                });
+
+                _orderList.Remove(selectedOrder);
             }
 
+            OrderDAL orderData = new OrderDAL(_reqSession);
+            int orderid, itemid;
+            
+            foreach (ExOrder objOrder in _orderList)
+            {
+                orderid=orderData.AddOrder(objOrder);
 
-
+                foreach (ExOrderItem item in objOrder.ItemList)
+                {
+                    string productType = item.ProductType;
+                }
+            }
 
         }
         private void btnDelOrder_Click(object sender, EventArgs e)

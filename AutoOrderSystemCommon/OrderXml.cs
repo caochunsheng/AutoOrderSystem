@@ -35,6 +35,7 @@ namespace AutoOrderSystem.Common
                     CustomerAddress = nodeOrder.Attributes["customerAddress"].Value,
                     OrderDate = Convert.ToDateTime(nodeOrder.Attributes["orderDate"].Value),
                     DeliveryDate = Convert.ToDateTime(nodeOrder.Attributes["deliveryDate"].Value),
+                    Remarks = nodeOrder.Attributes["remarks"].Value,
                     ItemList = new List<ExOrderItem>()
                 };
 
@@ -45,13 +46,14 @@ namespace AutoOrderSystem.Common
                     double length = Convert.ToDouble(str.Split('*')[0]);
                     double width = Convert.ToDouble(str.Split('*')[1]);
                     double height = Convert.ToDouble(str.Split('*')[2]);
-                    string remark = $"{nodeProduct.Attributes["grain"].Value}/{nodeProduct.Attributes["grain"].Value}/{nodeProduct.Attributes["color"].Value}/{nodeProduct.Attributes["grain"].Value}/{nodeProduct.Attributes["grain"].Value}/{nodeProduct.Attributes["grain"].Value}";
+                    string remark = $"{nodeProduct.Attributes["grain"].Value}/{nodeProduct.Attributes["color"].Value}/{nodeProduct.Attributes["color"].Value}/{nodeProduct.Attributes["grain"].Value}/{nodeProduct.Attributes["grain"].Value}/{nodeProduct.Attributes["grain"].Value}";
 
 
                     ExOrderItem objItem = new ExOrderItem()
                     {
                         ProductName = nodeProduct.Attributes["name"].Value,
                         ProductType = nodeProduct.Attributes["type"].Value,
+                        ProductCode = nodeProduct.Attributes["code"].Value,
                         Model = nodeProduct.Attributes["model"].Value,
                         ModelSource = "File",
                         Length = length,
@@ -59,6 +61,7 @@ namespace AutoOrderSystem.Common
                         Height = height,
                         Count = Convert.ToInt32(nodeProduct.Attributes["count"].Value),
                         ProductDec = new StringBuilder(nodeProduct.OuterXml),
+                        ProductNode=nodeProduct,
                         Remarks = remark
                     };
 

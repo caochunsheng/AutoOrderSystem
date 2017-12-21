@@ -13,6 +13,7 @@ namespace AutoOrderSystem.Model
         public string CustomerAddress { get; set; }
         public DateTime OrderDate { get; set; }
         public DateTime DeliveryDate { get; set; }
+        public string Remarks { get; set; }
         public List<ExOrderItem> ItemList { get; set; }
     }
 }

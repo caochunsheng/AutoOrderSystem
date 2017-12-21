@@ -7,8 +7,7 @@ namespace AutoOrderSystem.Model
 {
     public class ProductType
     {
-        public string Code { get; set; }
+        public int TypeId { get; set; }
         public string TypeName { get; set; }
-        public List<StructureType> StructureTypeList { get; set; }
     }
 }
