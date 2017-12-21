@@ -8,11 +8,7 @@ namespace AutoOrderSystem.Common
 {
     public static class LogHelper
     {
-        public enum LogType
-        {
-            Status,
-            Error
-        }
+
         public static void WriteLog(string message,LogType logtype)
         {
             string strPath;                                    
@@ -37,5 +33,10 @@ namespace AutoOrderSystem.Common
             }
 
         }
+    }
+    public enum LogType
+    {
+        Status,
+        Error
     }
 }

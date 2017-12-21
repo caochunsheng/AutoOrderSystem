@@ -53,7 +53,7 @@ namespace AutoOrderSystem.Common
 
                     if ((int)jResult["result_code"] > 0)
                     {
-                        LogHelper.WriteLog($"增加订单{order_id}成功", LogHelper.LogType.Status);
+                        LogHelper.WriteLog($"增加订单{order_id}成功", LogType.Status);
 
                         for (int i = 0; i < order.Products.Count; i++)
                         {
@@ -107,12 +107,12 @@ namespace AutoOrderSystem.Common
                             jResult = JObject.Parse(response);
                             if ((int)jResult["result_code"] > 0)
                             {
-                                LogHelper.WriteLog($"增加订单项{item_id}成功", LogHelper.LogType.Status);
+                                LogHelper.WriteLog($"增加订单项{item_id}成功", LogType.Status);
                                 //this.listBoxLog.Items.Add(String.Format("增加订单项成功"));
                             }
                             else
                             {
-                                LogHelper.WriteLog($"增加订单项{item_id}失败", LogHelper.LogType.Status);
+                                LogHelper.WriteLog($"增加订单项{item_id}失败", LogType.Status);
                                 //this.listBoxLog.Items.Add(String.Format("增加订单项失败"));
                             }
 
@@ -121,7 +121,7 @@ namespace AutoOrderSystem.Common
                     }
                     else
                     {
-                        LogHelper.WriteLog($"增加订单{order_id}失败", LogHelper.LogType.Status);
+                        LogHelper.WriteLog($"增加订单{order_id}失败",LogType.Status);
                         //this.Log.Text = String.Format("增加订单{0}失败", order.OrderNo);
 
                         //return false;
@@ -133,7 +133,7 @@ namespace AutoOrderSystem.Common
                     if (result == DialogResult.Ignore)
                     {
 
-                        LogHelper.WriteLog($"订单{order.OrderNo}已经存在！", LogHelper.LogType.Status);
+                        LogHelper.WriteLog($"订单{order.OrderNo}已经存在！",LogType.Status);
                         continue;
                     }
                     else if (result == DialogResult.Abort)
@@ -493,7 +493,7 @@ namespace AutoOrderSystem.Common
                                     product.PartInfo.Add(part);
                                 }
                                 order.Products.Add(product);
-                                LogHelper.WriteLog($"订单{order.OrderNo}中添加一个产品{product.ProductName}", LogHelper.LogType.Status);
+                                LogHelper.WriteLog($"订单{order.OrderNo}中添加一个产品{product.ProductName}", LogType.Status);
                             }
                             else
                             {
@@ -540,7 +540,7 @@ namespace AutoOrderSystem.Common
                                     door.ProductQuantity = 1;// Convert.ToInt32(dt_orderserial.Rows[0]["数量"].ToString());
                                     door.ProductRemarks = dt_Door.Rows[0]["备注"].ToString();
                                     order.Products.Add(door);
-                                    LogHelper.WriteLog($"订单{order.OrderNo}中添加一个产品{ door.ProductName}", LogHelper.LogType.Status);
+                                    LogHelper.WriteLog($"订单{order.OrderNo}中添加一个产品{ door.ProductName}", LogType.Status);
                                 }
                                 else if (dt_Door.Rows.Count == 2)//子母门
                                 {
@@ -586,7 +586,7 @@ namespace AutoOrderSystem.Common
                                             mother_door.ProductQuantity = 1;// Convert.ToInt32(dt_orderserial.Rows[0]["数量"].ToString());
                                             mother_door.ProductRemarks = dt_Door.Rows[i]["备注"].ToString();
                                             order.Products.Add(mother_door);
-                                            LogHelper.WriteLog($"订单{order.OrderNo}中添加一个产品{ mother_door.ProductName}", LogHelper.LogType.Status);
+                                            LogHelper.WriteLog($"订单{order.OrderNo}中添加一个产品{ mother_door.ProductName}", LogType.Status);
 
 
                                         }
@@ -625,7 +625,7 @@ namespace AutoOrderSystem.Common
                                             child_door.ProductQuantity = 1;// Convert.ToInt32(dt_orderserial.Rows[0]["数量"].ToString());
                                             child_door.ProductRemarks = dt_Door.Rows[i]["备注"].ToString();
                                             order.Products.Add(child_door);
-                                            LogHelper.WriteLog($"订单{order.OrderNo}中添加一个产品{ child_door.ProductName}", LogHelper.LogType.Status);
+                                            LogHelper.WriteLog($"订单{order.OrderNo}中添加一个产品{ child_door.ProductName}", LogType.Status);
 
                                         }
 
@@ -684,10 +684,10 @@ namespace AutoOrderSystem.Common
                                         part.PartThick = dt_DoorPocket.Rows[i]["厚"].ToString();
                                         part.PartNum = Convert.ToInt32(dt_DoorPocket.Rows[i]["数量"].ToString());
                                         door_pocket.PartInfo.Add(part);
-                                        LogHelper.WriteLog($"产品{ door_pocket.ProductName}中添加一个部件{part.PartName}", LogHelper.LogType.Status);
+                                        LogHelper.WriteLog($"产品{ door_pocket.ProductName}中添加一个部件{part.PartName}", LogType.Status);
                                     }
                                     order.Products.Add(door_pocket);
-                                    LogHelper.WriteLog($"订单{order.OrderNo}中添加一个产品{ door_pocket.ProductName}", LogHelper.LogType.Status);
+                                    LogHelper.WriteLog($"订单{order.OrderNo}中添加一个产品{ door_pocket.ProductName}", LogType.Status);
                                 }
                             }
 

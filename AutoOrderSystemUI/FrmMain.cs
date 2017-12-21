@@ -194,23 +194,23 @@ namespace AutoOrderSystem.UI
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-
-            int index = dgvOrder.Rows.Add();
-            dgvOrder.Rows[index].Cells["ColSelected"].Value = true;
-            dgvOrder.Rows[index].Cells["ColOrderNo"].Value = "1712129003";
-            dgvOrder.Rows[index].Cells["ColCustomerName"].Value = "王小二";
-            dgvOrder.Rows[index].Cells["ColCustomerPhone"].Value = "13934804590";
-            dgvOrder.Rows[index].Cells["ColCustomerAddress"].Value = "北京市顺义区李遂镇";
-            dgvOrder.Rows[index].Cells["ColOrderDate"].Value = "2017-12-18";
-            dgvOrder.Rows[index].Cells["ColDeliveryDate"].Value = "2017-12-19";
-            dgvOrder.Rows[index].Cells["ColOrderDetail"].Value = "【详情】";
+            LogHelper.WriteLog("<添加订单>", LogType.Status);
+            //int index = dgvOrder.Rows.Add();
+            //dgvOrder.Rows[index].Cells["ColSelected"].Value = true;
+            //dgvOrder.Rows[index].Cells["ColOrderNo"].Value = "1712129003";
+            //dgvOrder.Rows[index].Cells["ColCustomerName"].Value = "王小二";
+            //dgvOrder.Rows[index].Cells["ColCustomerPhone"].Value = "13934804590";
+            //dgvOrder.Rows[index].Cells["ColCustomerAddress"].Value = "北京市顺义区李遂镇";
+            //dgvOrder.Rows[index].Cells["ColOrderDate"].Value = "2017-12-18";
+            //dgvOrder.Rows[index].Cells["ColDeliveryDate"].Value = "2017-12-19";
+            //dgvOrder.Rows[index].Cells["ColOrderDetail"].Value = "【详情】";
 
         }
         private void dgvOrder_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int colIndex = e.ColumnIndex;
             int rowIndex = e.RowIndex;
-            if (e.ColumnIndex == 7)
+            if (colIndex == 8&&rowIndex>=0)
             {
                 string orderNo = dgvOrder.Rows[rowIndex].Cells["ColOrderNo"].Value.ToString();
                 ExOrder selectedOrder = _orderList.Find(order =>
@@ -234,12 +234,12 @@ namespace AutoOrderSystem.UI
         }
         private void btnERPOrder_Click(object sender, EventArgs e)
         {
+            LogHelper.WriteLog("<ERP订单>", LogType.Status);
             FrmERPOrder frm = new FrmERPOrder();
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 _orderList = frm._orderList;
                 this.ShowOrderList(_orderList);
-
             }
         }
         private void ShowOrderList(List<ExOrder> orderList)
@@ -279,7 +279,9 @@ namespace AutoOrderSystem.UI
         }
         private void btnSubmitOrder_Click(object sender, EventArgs e)
         {
+            LogHelper.WriteLog("<提交订单>", LogType.Status);
             dgvOrder.EndEdit();
+
             List<string> unselectedorderNoList = new List<string>();
             foreach (DataGridViewRow dr in dgvOrder.Rows)
             {
@@ -305,22 +307,56 @@ namespace AutoOrderSystem.UI
                 _orderList.Remove(selectedOrder);
             }
 
+            if (_orderList.Count<=0)
+            {
+                MessageBox.Show("抱歉，您没有选中任何一个订单！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
             OrderDAL orderData = new OrderDAL(_reqSession);
+            ProductTypeDAL typeDate = new ProductTypeDAL(_reqSession);
             int orderid, itemid;
             
             foreach (ExOrder objOrder in _orderList)
             {
-                orderid=orderData.AddOrder(objOrder);
-
-                foreach (ExOrderItem item in objOrder.ItemList)
+                //判断订单是否存在
+                if(orderData.Exists(objOrder))
                 {
-                    string productType = item.ProductType;
+                    LogHelper.WriteLog($"检测到订单{objOrder.OrderNo}已经存在！", LogType.Status);
+                    DialogResult result= MessageBox.Show($"订单{objOrder.OrderNo}已经存在\n点击【是】\n点击【否】\n点击【取消】", "警告", MessageBoxButtons.YesNoCancel,MessageBoxIcon.Question);
+                    return;
                 }
-            }
+                else
+                {
+                    orderid = orderData.AddOrder(objOrder);
+                    if (orderid > 0)
+                    {
+                        foreach (ExOrderItem item in objOrder.ItemList)
+                        {
+                            //检测产品类型是否存在，
+                            if (typeDate.Exists(item.ProductType))
+                            {
+                                itemid = orderData.AddOrderItem(item, orderid, 1002, typeDate.GetIndex(item.ProductType));
+                                if (itemid <= 0)//添加失败
+                                {
+                                    orderData.DelOrder(objOrder);
+                                }
+                            }
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show($"订单【{objOrder.OrderNo}】提交失败！", "错误", MessageBoxButtons.AbortRetryIgnore, MessageBoxIcon.Error);
 
+                        return;
+                    }
+                }
+
+            }
         }
         private void btnDelOrder_Click(object sender, EventArgs e)
         {
+            LogHelper.WriteLog("<删除订单>", LogType.Status);
             dgvOrder.EndEdit();
             List<string> orderNoList = new List<string>();
             foreach (DataGridViewRow dr in dgvOrder.Rows)
@@ -369,6 +405,16 @@ namespace AutoOrderSystem.UI
             foreach (DataGridViewRow dr in dgvOrder.Rows)
             {
                 dr.Cells["ColSelected"].Value = false;
+            }
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            WebRequestSession Session = new WebRequestSession();
+            if(Session.Login(true, "192.168.7.104", 443, "admin", "admin", String.Empty, "此处放机器ID"))
+            {
+                _reqSession = Session;
+                MessageBox.Show("登陆成功");
             }
         }
     }

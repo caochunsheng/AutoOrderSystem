@@ -41,14 +41,19 @@ namespace AutoOrderSystem.UI
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.pnlLogo = new System.Windows.Forms.Panel();
             this.lblCapation = new System.Windows.Forms.Label();
-            this.btnMin = new System.Windows.Forms.Button();
-            this.btnMax = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
             this.pnlMain = new System.Windows.Forms.Panel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dgvOrder = new CCWin.SkinControl.SkinDataGridView();
+            this.ColSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.ColOrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCustomerPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCustomerAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColOrderRemarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColOrderDetail = new System.Windows.Forms.DataGridViewLinkColumn();
             this.menuDgvOrder = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.menuItemSelectAll = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemCancelAll = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,22 +67,22 @@ namespace AutoOrderSystem.UI
             this.ColProductCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColRemarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.pnlBottom = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnAddOrder = new System.Windows.Forms.ToolStripButton();
             this.btnDelOrder = new System.Windows.Forms.ToolStripButton();
             this.btnSubmitOrder = new System.Windows.Forms.ToolStripButton();
             this.btnERPOrder = new System.Windows.Forms.ToolStripButton();
             this.btnExcelOrder = new System.Windows.Forms.ToolStripButton();
-            this.pnlBottom = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.ColSelected = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.ColOrderNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCustomerName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCustomerPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCustomerAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColDeliveryDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColOrderRemarks = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColOrderDetail = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.btnLogin = new System.Windows.Forms.ToolStripButton();
+            this.btnOrderPreview = new System.Windows.Forms.ToolStripButton();
+            this.pnlLogo = new System.Windows.Forms.Panel();
+            this.btnMin = new System.Windows.Forms.Button();
+            this.btnMax = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.pnlTop.SuspendLayout();
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -111,15 +116,6 @@ namespace AutoOrderSystem.UI
             this.pnlTop.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlCaption_MouseMove);
             this.pnlTop.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlCaption_MouseUp);
             // 
-            // pnlLogo
-            // 
-            this.pnlLogo.BackgroundImage = global::AutoOrderSystem.UI.Properties.Resources.ArtismanLogo;
-            this.pnlLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pnlLogo.Location = new System.Drawing.Point(4, 3);
-            this.pnlLogo.Name = "pnlLogo";
-            this.pnlLogo.Size = new System.Drawing.Size(233, 54);
-            this.pnlLogo.TabIndex = 0;
-            // 
             // lblCapation
             // 
             this.lblCapation.AutoSize = true;
@@ -130,55 +126,6 @@ namespace AutoOrderSystem.UI
             this.lblCapation.Size = new System.Drawing.Size(198, 33);
             this.lblCapation.TabIndex = 3;
             this.lblCapation.Text = "订 单 系 统";
-            // 
-            // btnMin
-            // 
-            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMin.FlatAppearance.BorderSize = 0;
-            this.btnMin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMin.Image = global::AutoOrderSystem.UI.Properties.Resources.Min;
-            this.btnMin.Location = new System.Drawing.Point(1167, 0);
-            this.btnMin.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(38, 33);
-            this.btnMin.TabIndex = 0;
-            this.btnMin.UseVisualStyleBackColor = true;
-            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
-            // 
-            // btnMax
-            // 
-            this.btnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMax.FlatAppearance.BorderSize = 0;
-            this.btnMax.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnMax.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMax.Image = global::AutoOrderSystem.UI.Properties.Resources.Max;
-            this.btnMax.Location = new System.Drawing.Point(1205, 0);
-            this.btnMax.Margin = new System.Windows.Forms.Padding(0);
-            this.btnMax.Name = "btnMax";
-            this.btnMax.Size = new System.Drawing.Size(38, 33);
-            this.btnMax.TabIndex = 0;
-            this.btnMax.UseVisualStyleBackColor = true;
-            this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Image = global::AutoOrderSystem.UI.Properties.Resources.close;
-            this.btnClose.Location = new System.Drawing.Point(1243, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(0);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(38, 33);
-            this.btnClose.TabIndex = 0;
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // pnlMain
             // 
@@ -227,8 +174,7 @@ namespace AutoOrderSystem.UI
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOrder.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvOrder.ColumnHeadersHeight = 26;
-            this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColSelected,
             this.ColOrderNo,
@@ -241,7 +187,7 @@ namespace AutoOrderSystem.UI
             this.ColOrderDetail});
             this.dgvOrder.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvOrder.ContextMenuStrip = this.menuDgvOrder;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -256,13 +202,15 @@ namespace AutoOrderSystem.UI
             this.dgvOrder.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvOrder.Location = new System.Drawing.Point(0, 0);
             this.dgvOrder.Name = "dgvOrder";
+            this.dgvOrder.ReadOnly = true;
             this.dgvOrder.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvOrder.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgvOrder.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvOrder.RowTemplate.DefaultCellStyle.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvOrder.RowTemplate.Height = 23;
             this.dgvOrder.Size = new System.Drawing.Size(751, 496);
             this.dgvOrder.TabIndex = 0;
@@ -270,6 +218,60 @@ namespace AutoOrderSystem.UI
             this.dgvOrder.TitleBackColorBegin = System.Drawing.Color.White;
             this.dgvOrder.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
             this.dgvOrder.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellContentClick);
+            // 
+            // ColSelected
+            // 
+            this.ColSelected.HeaderText = "选中";
+            this.ColSelected.Name = "ColSelected";
+            this.ColSelected.ReadOnly = true;
+            // 
+            // ColOrderNo
+            // 
+            this.ColOrderNo.HeaderText = "订单编号";
+            this.ColOrderNo.Name = "ColOrderNo";
+            this.ColOrderNo.ReadOnly = true;
+            // 
+            // ColCustomerName
+            // 
+            this.ColCustomerName.HeaderText = "客户名称";
+            this.ColCustomerName.Name = "ColCustomerName";
+            this.ColCustomerName.ReadOnly = true;
+            // 
+            // ColCustomerPhone
+            // 
+            this.ColCustomerPhone.HeaderText = "客户电话";
+            this.ColCustomerPhone.Name = "ColCustomerPhone";
+            this.ColCustomerPhone.ReadOnly = true;
+            // 
+            // ColCustomerAddress
+            // 
+            this.ColCustomerAddress.HeaderText = "客户地址";
+            this.ColCustomerAddress.Name = "ColCustomerAddress";
+            this.ColCustomerAddress.ReadOnly = true;
+            // 
+            // ColOrderDate
+            // 
+            this.ColOrderDate.HeaderText = "下单日期";
+            this.ColOrderDate.Name = "ColOrderDate";
+            this.ColOrderDate.ReadOnly = true;
+            // 
+            // ColDeliveryDate
+            // 
+            this.ColDeliveryDate.HeaderText = "交付日期";
+            this.ColDeliveryDate.Name = "ColDeliveryDate";
+            this.ColDeliveryDate.ReadOnly = true;
+            // 
+            // ColOrderRemarks
+            // 
+            this.ColOrderRemarks.HeaderText = "备注信息";
+            this.ColOrderRemarks.Name = "ColOrderRemarks";
+            this.ColOrderRemarks.ReadOnly = true;
+            // 
+            // ColOrderDetail
+            // 
+            this.ColOrderDetail.HeaderText = "操作";
+            this.ColOrderDetail.Name = "ColOrderDetail";
+            this.ColOrderDetail.ReadOnly = true;
             // 
             // menuDgvOrder
             // 
@@ -312,8 +314,7 @@ namespace AutoOrderSystem.UI
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvOrderItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvOrderItem.ColumnHeadersHeight = 26;
-            this.dgvOrderItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvOrderItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrderItem.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColProductName,
             this.ColProductType,
@@ -401,14 +402,43 @@ namespace AutoOrderSystem.UI
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnAddOrder,
             this.btnDelOrder,
-            this.btnSubmitOrder,
+            this.toolStripSeparator2,
             this.btnERPOrder,
-            this.btnExcelOrder});
+            this.btnExcelOrder,
+            this.toolStripSeparator3,
+            this.btnLogin,
+            this.toolStripSeparator1,
+            this.btnOrderPreview,
+            this.btnSubmitOrder});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(1284, 39);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // pnlBottom
+            // 
+            this.pnlBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
+            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlBottom.Location = new System.Drawing.Point(0, 595);
+            this.pnlBottom.Margin = new System.Windows.Forms.Padding(1);
+            this.pnlBottom.Name = "pnlBottom";
+            this.pnlBottom.Size = new System.Drawing.Size(1284, 40);
+            this.pnlBottom.TabIndex = 3;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.pnlMain);
+            this.panel1.Controls.Add(this.pnlBottom);
+            this.panel1.Controls.Add(this.pnlTop);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1284, 635);
+            this.panel1.TabIndex = 4;
             // 
             // btnAddOrder
             // 
@@ -459,104 +489,96 @@ namespace AutoOrderSystem.UI
             this.btnExcelOrder.Size = new System.Drawing.Size(93, 36);
             this.btnExcelOrder.Text = "Excel订单";
             // 
-            // pnlBottom
+            // btnLogin
             // 
-            this.pnlBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.pnlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlBottom.Location = new System.Drawing.Point(0, 595);
-            this.pnlBottom.Margin = new System.Windows.Forms.Padding(1);
-            this.pnlBottom.Name = "pnlBottom";
-            this.pnlBottom.Size = new System.Drawing.Size(1284, 40);
-            this.pnlBottom.TabIndex = 3;
+            this.btnLogin.Image = ((System.Drawing.Image)(resources.GetObject("btnLogin.Image")));
+            this.btnLogin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(51, 36);
+            this.btnLogin.Text = "登录";
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // panel1
+            // btnOrderPreview
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.pnlMain);
-            this.panel1.Controls.Add(this.pnlBottom);
-            this.panel1.Controls.Add(this.pnlTop);
-            this.panel1.Location = new System.Drawing.Point(2, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1284, 635);
-            this.panel1.TabIndex = 4;
+            this.btnOrderPreview.Image = global::AutoOrderSystem.UI.Properties.Resources.orderpreview_32px;
+            this.btnOrderPreview.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.btnOrderPreview.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btnOrderPreview.Name = "btnOrderPreview";
+            this.btnOrderPreview.Size = new System.Drawing.Size(91, 36);
+            this.btnOrderPreview.Text = "浏览订单";
             // 
-            // ColSelected
+            // pnlLogo
             // 
-            this.ColSelected.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColSelected.Frozen = true;
-            this.ColSelected.HeaderText = "选中";
-            this.ColSelected.Name = "ColSelected";
-            this.ColSelected.Width = 84;
+            this.pnlLogo.BackgroundImage = global::AutoOrderSystem.UI.Properties.Resources.ArtismanLogo;
+            this.pnlLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pnlLogo.Location = new System.Drawing.Point(4, 3);
+            this.pnlLogo.Name = "pnlLogo";
+            this.pnlLogo.Size = new System.Drawing.Size(233, 54);
+            this.pnlLogo.TabIndex = 0;
             // 
-            // ColOrderNo
+            // btnMin
             // 
-            this.ColOrderNo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColOrderNo.Frozen = true;
-            this.ColOrderNo.HeaderText = "订单编号";
-            this.ColOrderNo.Name = "ColOrderNo";
-            this.ColOrderNo.ReadOnly = true;
-            this.ColOrderNo.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColOrderNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.ColOrderNo.Width = 84;
+            this.btnMin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMin.FlatAppearance.BorderSize = 0;
+            this.btnMin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMin.Image = global::AutoOrderSystem.UI.Properties.Resources.Min;
+            this.btnMin.Location = new System.Drawing.Point(1167, 0);
+            this.btnMin.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(38, 33);
+            this.btnMin.TabIndex = 0;
+            this.btnMin.UseVisualStyleBackColor = true;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
             // 
-            // ColCustomerName
+            // btnMax
             // 
-            this.ColCustomerName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColCustomerName.Frozen = true;
-            this.ColCustomerName.HeaderText = "客户名称";
-            this.ColCustomerName.Name = "ColCustomerName";
-            this.ColCustomerName.ReadOnly = true;
-            this.ColCustomerName.Width = 84;
+            this.btnMax.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMax.FlatAppearance.BorderSize = 0;
+            this.btnMax.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnMax.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMax.Image = global::AutoOrderSystem.UI.Properties.Resources.Max;
+            this.btnMax.Location = new System.Drawing.Point(1205, 0);
+            this.btnMax.Margin = new System.Windows.Forms.Padding(0);
+            this.btnMax.Name = "btnMax";
+            this.btnMax.Size = new System.Drawing.Size(38, 33);
+            this.btnMax.TabIndex = 0;
+            this.btnMax.UseVisualStyleBackColor = true;
+            this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
             // 
-            // ColCustomerPhone
+            // btnClose
             // 
-            this.ColCustomerPhone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColCustomerPhone.Frozen = true;
-            this.ColCustomerPhone.HeaderText = "客户电话";
-            this.ColCustomerPhone.Name = "ColCustomerPhone";
-            this.ColCustomerPhone.ReadOnly = true;
-            this.ColCustomerPhone.Width = 84;
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::AutoOrderSystem.UI.Properties.Resources.close;
+            this.btnClose.Location = new System.Drawing.Point(1243, 0);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(38, 33);
+            this.btnClose.TabIndex = 0;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // ColCustomerAddress
+            // toolStripSeparator1
             // 
-            this.ColCustomerAddress.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColCustomerAddress.Frozen = true;
-            this.ColCustomerAddress.HeaderText = "客户地址";
-            this.ColCustomerAddress.Name = "ColCustomerAddress";
-            this.ColCustomerAddress.ReadOnly = true;
-            this.ColCustomerAddress.Width = 83;
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
             // 
-            // ColOrderDate
+            // toolStripSeparator2
             // 
-            this.ColOrderDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColOrderDate.Frozen = true;
-            this.ColOrderDate.HeaderText = "下单日期";
-            this.ColOrderDate.Name = "ColOrderDate";
-            this.ColOrderDate.ReadOnly = true;
-            this.ColOrderDate.Width = 84;
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 39);
             // 
-            // ColDeliveryDate
+            // toolStripSeparator3
             // 
-            this.ColDeliveryDate.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColDeliveryDate.Frozen = true;
-            this.ColDeliveryDate.HeaderText = "交付日期";
-            this.ColDeliveryDate.Name = "ColDeliveryDate";
-            this.ColDeliveryDate.ReadOnly = true;
-            this.ColDeliveryDate.Width = 84;
-            // 
-            // ColOrderRemarks
-            // 
-            this.ColOrderRemarks.HeaderText = "备注信息";
-            this.ColOrderRemarks.Name = "ColOrderRemarks";
-            // 
-            // ColOrderDetail
-            // 
-            this.ColOrderDetail.HeaderText = "订单详情";
-            this.ColOrderDetail.Name = "ColOrderDetail";
-            this.ColOrderDetail.ReadOnly = true;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 39);
             // 
             // FrmMain
             // 
@@ -608,7 +630,6 @@ namespace AutoOrderSystem.UI
         private System.Windows.Forms.ToolStripButton btnERPOrder;
         private System.Windows.Forms.ToolStripButton btnExcelOrder;
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private CCWin.SkinControl.SkinDataGridView dgvOrder;
         private CCWin.SkinControl.SkinDataGridView dgvOrderItem;
         private ContextMenuStrip menuDgvOrder;
         private ToolStripMenuItem menuItemSelectAll;
@@ -621,6 +642,7 @@ namespace AutoOrderSystem.UI
         private DataGridViewTextBoxColumn ColProductSize;
         private DataGridViewTextBoxColumn ColProductCount;
         private DataGridViewTextBoxColumn ColRemarks;
+        private CCWin.SkinControl.SkinDataGridView dgvOrder;
         private DataGridViewCheckBoxColumn ColSelected;
         private DataGridViewTextBoxColumn ColOrderNo;
         private DataGridViewTextBoxColumn ColCustomerName;
@@ -630,5 +652,10 @@ namespace AutoOrderSystem.UI
         private DataGridViewTextBoxColumn ColDeliveryDate;
         private DataGridViewTextBoxColumn ColOrderRemarks;
         private DataGridViewLinkColumn ColOrderDetail;
+        private ToolStripButton btnLogin;
+        private ToolStripButton btnOrderPreview;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripSeparator toolStripSeparator3;
+        private ToolStripSeparator toolStripSeparator1;
     }
 }

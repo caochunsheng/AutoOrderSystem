@@ -73,13 +73,13 @@ namespace AutoOrderSystem
                 if (Session.Login(this.SSL, this.ServerIP, this.Port, this.User, this.Pass, String.Empty, "此处放机器ID"))
                 {
                     //this.timer_IsLogined.Enabled = true;
-                    LogHelper.WriteLog($"登录成功！用户：{User} 服务器地址：{ServerIP}", LogHelper.LogType.Status);
+                    LogHelper.WriteLog($"登录成功！用户：{User} 服务器地址：{ServerIP}", LogType.Status);
                     this.DialogResult = DialogResult.OK;
                 }
                 else
                 {
 
-                    LogHelper.WriteLog($"登录失败！用户：{User} 服务器地址：{ServerIP}", LogHelper.LogType.Status);
+                    LogHelper.WriteLog($"登录失败！用户：{User} 服务器地址：{ServerIP}", LogType.Status);
                     MessageBox.Show("客户端登录失败", "错误", MessageBoxButtons.OK, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button1);
 
                     return;

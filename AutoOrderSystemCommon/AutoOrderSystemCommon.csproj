@@ -89,7 +89,6 @@
     <Compile Include="OrderXml.cs" />
     <Compile Include="ProductRules.cs" />
     <Compile Include="ProductTypeDAL.cs" />
-    <Compile Include="ProductTypeLib.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

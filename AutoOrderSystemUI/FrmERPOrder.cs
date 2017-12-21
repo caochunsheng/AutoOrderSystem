@@ -172,15 +172,20 @@ namespace AutoOrderSystem.UI
 
         private void btnGet_Click(object sender, EventArgs e)
         {
+            LogHelper.WriteLog("<获取订单Xml>", LogType.Status);
+
             OrderXml xm = new OrderXml(xmlpath);
    
             if(xm.Convert2Model(out _orderList))
             {
+                LogHelper.WriteLog("(订单Xml)-->(模型)，转换成功！", LogType.Status);
                 this.DialogResult = DialogResult.OK;
                 this.Close();
             }
-
-
+            else
+            {
+                LogHelper.WriteLog("(订单Xml)-->(模型)，转换失败！", LogType.Error);
+            }
         }
     }
 }
