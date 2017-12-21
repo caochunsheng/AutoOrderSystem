@@ -17,7 +17,17 @@ namespace AutoOrderSystemUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmMain());
+            //Application.Run(new FrmLogin());
+
+            FrmLogin login = new FrmLogin();
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new FrmMain(login.Session));
+            }
+            else
+            {
+                return;
+            }
         }
     }
 }
